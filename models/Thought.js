@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 const moment = require('moment');
 
 // Reaction Model
@@ -13,7 +13,7 @@ const ReactionSchema = new Schema(
             required: true,
             maxLength: 280
         },
-        userName: {
+        username: {
             type: String,
             required: true
         },

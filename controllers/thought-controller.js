@@ -92,11 +92,7 @@ const thoughtController = {
             { $push: { reactions: body } },
             { new: true, runValidators: true }
         )
-            .populate({
-                path: 'reactions',
-                select: '-__v'
-            })
-            .select('-__v')
+           
             .then(dbThoughtData => {
                 if (!dbThoughtData) {
                     res.status(404).json({ message: 'No thought found with this id!' });
